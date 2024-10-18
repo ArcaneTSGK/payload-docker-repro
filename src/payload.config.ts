@@ -21,6 +21,15 @@ export default buildConfig({
   },
   collections: [Users, Media],
   editor: lexicalEditor(),
+  endpoints: [
+    {
+      path: '/health-check',
+      method: 'get',
+      handler: async () => {
+        return Response.json("RUNNING!")
+      },
+    }
+  ],
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
@@ -28,9 +37,14 @@ export default buildConfig({
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI || '',
-    },
+    }
   }),
   sharp,
+  upload: {
+    limits: {
+      fileSize: 500000 // 500kb
+    }
+  },
   plugins: [
     // storage-adapter-placeholder
   ],

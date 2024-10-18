@@ -12,23 +12,27 @@
     "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
     "lint": "cross-env NODE_OPTIONS=--no-deprecation next lint",
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
-    "start": "cross-env NODE_OPTIONS=--no-deprecation next start"
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+    "format": "prettier --write ."
   },
   "dependencies": {
-    "@payloadcms/next": "beta",
-    "@payloadcms/plugin-cloud": "beta",
-    "@payloadcms/richtext-lexical": "beta",
+    "@payloadcms/next": "3.0.0-beta.116",
+    "@payloadcms/plugin-cloud": "3.0.0-beta.116",
+    "@payloadcms/db-postgres": "3.0.0-beta.116",
+    "@payloadcms/storage-s3": "3.0.0-beta.116",
+    "@payloadcms/richtext-lexical": "3.0.0-beta.116",
+    "@payloadcms/ui": "3.0.0-beta.116",
     "cross-env": "^7.0.3",
-    "graphql": "^16.8.1",
+    "graphql": "^16.9.0",
     "next": "15.0.0-canary.173",
-    "payload": "beta",
+    "payload": "3.0.0-beta.116",
     "react": "19.0.0-rc-3edc000d-20240926",
     "react-dom": "19.0.0-rc-3edc000d-20240926",
-    "sharp": "0.32.6",
-    "@payloadcms/db-postgres": "beta"
+    "sharp": "0.33.5",
+    "prettier": "^3.3.3"
   },
   "devDependencies": {
-    "@types/node": "^22.5.4",
+    "@types/node": "^20.14.9",
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
     "eslint": "^8",
@@ -36,8 +40,10 @@
     "typescript": "5.6.3"
   },
   "engines": {
-    "node": "^18.20.2 || >=20.9.0"
+    "node": ">=20.9.0",
+    "pnpm": "9.8.0"
   },
+  "packageManager": "pnpm@9.8.0",
   "pnpm": {
     "overrides": {
       "@types/react": "npm:types-react@19.0.0-rc.1",
